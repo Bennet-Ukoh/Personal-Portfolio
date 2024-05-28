@@ -2,9 +2,9 @@ import React from "react";
 import { CgWorkAlt } from "react-icons/cg";
 import { FaReact } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
-import corpcommentImg from "@/public/corpcomment.png";
-import rmtdevImg from "@/public/rmtdev.png";
-import wordanalyticsImg from "@/public/wordanalytics.png";
+import corpcommentImg from "@/public/quizy.png";
+import rmtdevImg from "@/public/smart.png";
+import wordanalyticsImg from "@/public/portfolio.jpg";
 
 export const links = [
   {
@@ -35,51 +35,51 @@ export const links = [
 
 export const experiencesData = [
   {
-    title: "Graduated bootcamp",
-    location: "Miami, FL",
+    title: "Graduated from ALX",
+    location: "Remote",
     description:
-      "I graduated after 6 months of studying. I immediately found a job as a front-end developer.",
+      "I graduated after 1 year of intensive studying. I learned software development with a hands on projects and soft skills.",
     icon: React.createElement(LuGraduationCap),
-    date: "2019",
+    date: "2023",
   },
   {
     title: "Front-End Developer",
-    location: "Orlando, FL",
+    location: "PortHarcourt, Nigeria",
     description:
-      "I worked as a front-end developer for 2 years in 1 job and 1 year in another job. I also upskilled to the full stack.",
+      "I worked as a front-end developer for 1 year. I also upskilled to AICE graduate at ALX",
     icon: React.createElement(CgWorkAlt),
-    date: "2019 - 2021",
+    date: "2023 - 2024",
   },
   {
     title: "Full-Stack Developer",
-    location: "Houston, TX",
+    location: "Remote",
     description:
       "I'm now a full-stack developer working as a freelancer. My stack includes React, Next.js, TypeScript, Tailwind, Prisma and MongoDB. I'm open to full-time opportunities.",
     icon: React.createElement(FaReact),
-    date: "2021 - present",
+    date: "2024 - present",
   },
 ] as const;
 
 export const projectsData = [
   {
-    title: "CorpComment",
+    title: "Quizy App",
     description:
-      "I worked as a full-stack developer on this startup project for 2 years. Users can give public feedback to companies.",
-    tags: ["React", "Next.js", "MongoDB", "Tailwind", "Prisma"],
+      "A quiz application where users test their knowledge on interactive quizzes. It has features like creating quizzes, taking quizzes and viewing results. I was the front-end developer.",
+    tags: ["React", "React-Dom", "MySql", "Tailwind", "Django", "Python"],
     imageUrl: corpcommentImg,
   },
   {
-    title: "rmtDev",
+    title: "SmartSHE",
     description:
-      "Job board for remote developer jobs. I was the front-end developer. It has features like filtering, sorting and pagination.",
-    tags: ["React", "TypeScript", "Next.js", "Tailwind", "Redux"],
+      "SmartSHE is the digital platform that passionately creates an enabling environment for African SMEs to thrive in their businesses",
+    tags: ["React", "TypeScript", "Next.js", "Tailwind", "framer-motion"],
     imageUrl: rmtdevImg,
   },
   {
-    title: "Word Analytics",
+    title: "Personal Portfolio",
     description:
-      "A public web app for quick analytics on text. It shows word count, character count and social media post limits.",
-    tags: ["React", "Next.js", "SQL", "Tailwind", "Framer"],
+      "A personal portfolio website that showcases my projects, skills and experience with a well articulated contact form to reach me via email.",
+    tags: ["React", "Next.js", "Tailwind", "Framer"],
     imageUrl: wordanalyticsImg,
   },
 ] as const;

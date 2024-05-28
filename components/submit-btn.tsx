@@ -1,47 +1,24 @@
-"use server";
-
 import React from "react";
-import { Resend } from "resend";
-import { validateString, getErrorMessage } from "@/lib/utils";
-import ContactFormEmail from "@/email/contact-form-email";
+import { FaPaperPlane } from "react-icons/fa";
+import { useFormStatus } from "react-dom";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+export default function SubmitBtn() {
+  const { pending } = useFormStatus();
 
-export const sendEmail = async (formData: FormData) => {
-  const senderEmail = formData.get("senderEmail");
-  const message = formData.get("message");
-
-  // simple server-side validation
-  if (!validateString(senderEmail, 500)) {
-    return {
-      error: "Invalid sender email",
-    };
-  }
-  if (!validateString(message, 5000)) {
-    return {
-      error: "Invalid message",
-    };
-  }
-
-  let data;
-  try {
-    data = await resend.emails.send({
-      from: "Contact Form <onboarding@resend.dev>",
-      to: "bytegrad@gmail.com",
-      subject: "Message from contact form",
-      reply_to: senderEmail,
-      react: React.createElement(ContactFormEmail, {
-        message: message,
-        senderEmail: senderEmail,
-      }),
-    });
-  } catch (error: unknown) {
-    return {
-      error: getErrorMessage(error),
-    };
-  }
-
-  return {
-    data,
-  };
-};
+  return (
+    <button
+      type="submit"
+      className="group flex items-center justify-center gap-2 h-[3rem] w-[8rem] bg-gray-900 text-white rounded-full outline-none transition-all focus:scale-110 hover:scale-110 hover:bg-gray-950 active:scale-105 dark:bg-white dark:bg-opacity-10 disabled:scale-100 disabled:bg-opacity-65"
+      disabled={pending}
+    >
+      {pending ? (
+        <div className="h-5 w-5 animate-spin rounded-full border-b-2 border-white"></div>
+      ) : (
+        <>
+          Submit{" "}
+          <FaPaperPlane className="text-xs opacity-70 transition-all group-hover:translate-x-1 group-hover:-translate-y-1" />{" "}
+        </>
+      )}
+    </button>
+  );
+}
