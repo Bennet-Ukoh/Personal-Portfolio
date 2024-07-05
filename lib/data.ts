@@ -2,9 +2,9 @@ import React from "react";
 import { CgWorkAlt } from "react-icons/cg";
 import { FaReact } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
-import corpcommentImg from "@/public/quizy.png";
-import rmtdevImg from "@/public/smart.png";
-import wordanalyticsImg from "@/public/portfolio.jpg";
+import corpcommentImg from "@/public/Quizzyapp.png";
+import rmtdevImg from "@/public/smartshe.png";
+import wordanalyticsImg from "@/public/porfolioproject.png";
 
 export const links = [
   {
