@@ -58,13 +58,14 @@ export default function Project({
             ))}
           </ul>
 
-          <Link
+          <a
             href={url}
+            target="_blank"
             className="flex items-center gap-x-2 font-semibold text-zinc-400 hover:text-orange-700 dark:text-zinc-200 dark:hover:text-orange-500"
           >
             <Link2Icon className="h-4 w-4" />
             {linkName}
-          </Link>
+          </a>
         </div>
 
         <Image
