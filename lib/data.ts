@@ -62,15 +62,6 @@ export const experiencesData = [
 
 export const projectsData = [
   {
-    title: "Evento",
-    description:
-      "Evento is a platform that allows users search for events and book a ticket.",
-    tags: ["React", "Nextjs", "Postgress", "TypeScript", "Tailwind", "Zustand"],
-    imageUrl: eventoImg,
-    linkName: "eventsapp.vercel.app",
-    url: "https://eventsapp-cyan.vercel.app/",
-  },
-  {
     title: "PetSoft",
     description:
       "A pet management system that allows users to manage their pets and appointments.",
@@ -79,6 +70,16 @@ export const projectsData = [
     linkName: "petssoft.app",
     url: "https://petssoftware.vercel.app/",
   },
+  {
+    title: "Evento",
+    description:
+      "Evento is a platform that allows users search for events and book a ticket.",
+    tags: ["React", "Nextjs", "Postgress", "TypeScript", "Tailwind", "Zustand"],
+    imageUrl: eventoImg,
+    linkName: "eventsapp.vercel.app",
+    url: "https://eventsapp-cyan.vercel.app/",
+  },
+
   {
     title: "CorpComment",
     description:
