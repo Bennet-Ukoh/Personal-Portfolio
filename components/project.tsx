@@ -5,7 +5,6 @@ import { projectsData } from "@/lib/data";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Link2Icon } from "@radix-ui/react-icons";
-import Link from "next/link";
 
 type ProjectProps = (typeof projectsData)[number];
 
@@ -61,7 +60,7 @@ export default function Project({
           <a
             href={url}
             target="_blank"
-            className="flex items-center gap-x-2 font-semibold text-zinc-400 hover:text-orange-700 dark:text-zinc-200 dark:hover:text-orange-500"
+            className="flex items-center gap-x-2 font-semibold text-zinc-400 group-hover:text-orange-700 dark:text-zinc-200 dark:group-hover:text-orange-500"
           >
             <Link2Icon className="h-4 w-4" />
             {linkName}
