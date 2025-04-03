@@ -32,7 +32,7 @@ export default function About() {
       <p>
         My core stack is{" "}
         <span className="font-medium">
-          React, Next.js, Node.js, and MongoDB
+          React and Next.js
         </span>
         , with additional experience in TypeScript and Prisma. I am always eager
         to expand my skill set and explore new technologies. Currently, I'm
