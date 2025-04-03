@@ -36,11 +36,11 @@ export const links = [
 
 export const experiencesData = [
   {
-    title: "SmartShe Ltd",
-    location: "PortHarcourt, Nigeria",
+    title: "Freelance",
+    location: "Remote",
     description: "Front-end Developer.",
     icon: React.createElement(CgWorkAlt),
-    date: "2023 - Present",
+    date: "2024 - Present",
   },
   {
     title: "Alx Africa",
@@ -107,12 +107,10 @@ export const skillsData = [
   "TypeScript",
   "React",
   "Next.js",
-  "Node.js",
   "Git",
   "Tailwind",
   "Shadcn-ui",
   "Prisma",
-  "MongoDB",
   "Zustand",
   "PostgreSQL",
   "Python",
