@@ -1,10 +1,10 @@
-import Intro from "@/components/intro";
+import Intro from "@/features/home/components/intro";
 import SectionDivider from "@/components/ui/section-divider";
 import About from "@/components/about";
-import Projects from "@/components/projects";
+import Projects from "@/features/projects/components/projects";
 import Skills from "@/components/skills";
 import Experience from "@/components/experience";
-import Contact from "@/components/contact";
+import Contact from "@/features/contact/components/contact";
 
 export default function Home() {
   return (
