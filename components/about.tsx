@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import SectionHeading from "./section-heading";
+import SectionHeading from "./ui/section-heading";
 import { motion } from "framer-motion";
 import { useSectionInView } from "@/lib/hooks";
 
@@ -30,11 +30,8 @@ export default function About() {
       </p>
 
       <p>
-        My core stack is{" "}
-        <span className="font-medium">
-          React and Next.js
-        </span>
-        , with additional experience in TypeScript and Prisma. I am always eager
+        My core stack is <span className="font-medium">React and Next.js</span>,
+        with additional experience in TypeScript and Prisma. I am always eager
         to expand my skill set and explore new technologies. Currently, I'm
         seeking a <span className="font-medium">full-time role</span> as a
         Frontend Developer.
