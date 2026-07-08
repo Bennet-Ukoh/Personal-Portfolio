@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import { motion } from "framer-motion";
 import { links } from "@/components/layout/data/links";
 import Link from "next/link";

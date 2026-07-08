@@ -47,13 +47,17 @@ Open [http://localhost:3000](http://localhost:3000) to view it.
 ## Project Structure
 
 ```
-app/            # Next.js app router entry (layout, page, global styles)
-components/     # UI components (intro, about, projects, skills, experience, contact, etc.)
-actions/        # Server actions (contact form email sending)
-email/          # React Email templates
-context/        # React context (theme, active section)
-lib/            # Shared data, types, hooks, utilities
-public/         # Static assets and downloadable CV
+app/                   # Next.js App Router entry (layout, page, global styles)
+components/
+  layout/              # Header, footer + nav link data
+  ui/                  # Shared UI (SectionHeading, SubmitBtn, ThemeSwitch, SectionDivider)
+features/
+  home/                # About, Intro, Skills, Experience sections + data
+  projects/            # Project card components + project data
+  contact/             # Contact form, server action, React Email template
+context/               # React context providers (theme, active section)
+lib/                   # Custom hooks, shared types, utility functions
+public/                # Static assets and downloadable CV
 ```
 
 ## Connect

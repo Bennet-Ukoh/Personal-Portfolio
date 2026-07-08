@@ -1,11 +1,17 @@
 "use client";
 
-import React, { useEffect, useState, createContext, useContext } from "react";
+import {
+  useEffect,
+  useState,
+  createContext,
+  useContext,
+  type ReactNode,
+} from "react";
 
 type Theme = "light" | "dark";
 
 type ThemeContextProviderProps = {
-  children: React.ReactNode;
+  children: ReactNode;
 };
 
 type ThemeContextType = {

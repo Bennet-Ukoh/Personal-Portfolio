@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import { Fragment } from "react";
 import SectionHeading from "@/components/ui/section-heading";
 import {
   VerticalTimeline,
@@ -20,7 +20,7 @@ export default function Experience() {
       <SectionHeading>My experience</SectionHeading>
       <VerticalTimeline lineColor="">
         {experiencesData.map((item) => (
-          <React.Fragment key={item.title}>
+          <Fragment key={item.title}>
             <VerticalTimelineElement
               visible={true}
               contentStyle={{
@@ -52,7 +52,7 @@ export default function Experience() {
                 {item.description}
               </p>
             </VerticalTimelineElement>
-          </React.Fragment>
+          </Fragment>
         ))}
       </VerticalTimeline>
     </section>

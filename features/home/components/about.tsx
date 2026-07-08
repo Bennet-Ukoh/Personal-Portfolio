@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import SectionHeading from "@/components/ui/section-heading";
 import { motion } from "framer-motion";
 import { useSectionInView } from "@/lib/hooks";

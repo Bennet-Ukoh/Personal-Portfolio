@@ -1,7 +1,7 @@
 "use client";
 
-import React from "react";
-import SectionHeading from "../../../components/ui/section-heading";
+import { Fragment } from "react";
+import SectionHeading from "@/components/ui/section-heading";
 import { projectsData } from "./data/project";
 import Project from "./project";
 import { useSectionInView } from "@/lib/hooks";
@@ -14,9 +14,9 @@ export default function Projects() {
       <SectionHeading>My projects</SectionHeading>
       <div>
         {projectsData.map((project) => (
-          <React.Fragment key={project.title}>
+          <Fragment key={project.title}>
             <Project {...project} />
-          </React.Fragment>
+          </Fragment>
         ))}
       </div>
     </section>
