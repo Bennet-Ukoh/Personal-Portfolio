@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef } from "react";
-import { projectsData } from "@/lib/data";
+import { projectsData } from "./data/project";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { FiExternalLink } from "react-icons/fi";
