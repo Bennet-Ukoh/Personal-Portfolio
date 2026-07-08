@@ -14,7 +14,6 @@ export default function Project({
   description,
   tags,
   imageUrl,
-  linkName,
   url,
   githubUrl,
 }: ProjectProps) {
@@ -71,15 +70,17 @@ export default function Project({
                 Code
               </a>
             )}
-            <a
-              href={url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-x-2 font-semibold text-zinc-400 group-hover:text-orange-700 dark:text-zinc-200 dark:group-hover:text-orange-500"
-            >
-              <FiExternalLink className="h-4 w-4" />
-              {linkName}
-            </a>
+            {url && (
+              <a
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-x-2 font-semibold text-zinc-400 group-hover:text-orange-700 dark:text-zinc-200 dark:group-hover:text-orange-500"
+              >
+                <FiExternalLink className="h-4 w-4" />
+                Live Demo
+              </a>
+            )}
           </div>
         </div>
 
