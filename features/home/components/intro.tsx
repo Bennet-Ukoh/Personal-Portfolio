@@ -57,15 +57,31 @@ export default function Intro() {
         </div>
       </div>
 
+      <motion.div
+        className="mt-4 flex items-center justify-center gap-2 text-sm text-gray-600 dark:text-gray-400"
+        initial={{ opacity: 0, y: 100 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.05 }}
+      >
+        <span className="relative flex h-2 w-2">
+          <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75" />
+          <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500" />
+        </span>
+        Open to remote opportunities
+      </motion.div>
+
       <motion.h1
         className="mb-10 mt-4 px-4 text-2xl font-medium !leading-[1.5] sm:text-4xl"
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.1 }}
       >
         <span className="font-bold">Hello, I'm Bennet.</span> I'm a{" "}
-        <span className="font-bold">Frontend Engineer</span> who{" "}
-        <span className="font-bold">enjoys building responsive sites and apps.</span> My focus is{" "}
-        <span className="underline">React (Next.js)</span>.
+        <span className="font-bold">Frontend Engineer</span> who builds{" "}
+        <span className="font-bold">production-ready web applications</span>{" "}
+        with <span className="underline">React & Next.js</span> — currently
+        leading frontend engineering at{" "}
+        <span className="font-bold">CrystalLattice Limited</span>.
       </motion.h1>
 
       <motion.div
@@ -73,7 +89,7 @@ export default function Intro() {
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{
-          delay: 0.1,
+          delay: 0.15,
         }}
       >
         <Link

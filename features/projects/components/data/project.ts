@@ -7,7 +7,7 @@ export const projectsData = [
   {
     title: "PetSoft",
     description:
-      "An end-to-end pet management platform for tracking pets and appointments, with full CRUD, authentication, and a polished UI built on Next.js and Prisma.",
+      "Built a production-grade pet management platform with Next.js, Prisma, and Shadcn-ui — featuring full CRUD, user authentication, and a polished responsive UI. Live on Vercel.",
     tags: ["React", "TypeScript", "Next.js", "Shadcn-ui", "Prisma"],
     imageUrl: petsoftImg,
     url: "https://pet-soft-ashy.vercel.app",
@@ -16,7 +16,7 @@ export const projectsData = [
   {
     title: "Evento",
     description:
-      "An event discovery and booking platform where users search for events by city and browse upcoming experiences, powered by a PostgreSQL-backed Next.js app.",
+      "Built a city-based event discovery platform where users browse upcoming experiences by location — powered by Next.js App Router, PostgreSQL, and Zustand for client-side state.",
     tags: ["React", "Next.js", "PostgreSQL", "TypeScript", "Tailwind", "Zustand"],
     imageUrl: eventoImg,
     url: "https://evento-tan.vercel.app",
@@ -25,7 +25,7 @@ export const projectsData = [
   {
     title: "AI Resume Reviewer",
     description:
-      "An AI-powered resume feedback tool that analyses uploaded resumes and returns structured, actionable suggestions using LLM integration and a PostgreSQL-backed Next.js app.",
+      "Built an AI-powered tool where users upload a CV and receive structured, actionable feedback via LLM integration — Next.js frontend backed by a PostgreSQL database.",
     tags: ["Next.js", "TypeScript", "PostgreSQL", "AI/LLM", "React"],
     imageUrl: aiResumeImg,
     url: "",
@@ -34,7 +34,7 @@ export const projectsData = [
   {
     title: "MovieApp",
     description:
-      "A movie recommendation and discovery platform with a Next.js 15 frontend and a separate Express.js + MongoDB backend, pulling live data from the TMDB API.",
+      "Built a full-stack movie discovery platform: Next.js 15 frontend consuming a custom Express.js + MongoDB backend and real-time data from the TMDB API.",
     tags: ["Next.js 15", "Express.js", "MongoDB", "TMDB API", "TypeScript"],
     imageUrl: movieappImg,
     url: "",

@@ -28,14 +28,16 @@ export default function Contact() {
         once: true,
       }}
     >
-      <SectionHeading>Contact me</SectionHeading>
+      <SectionHeading>Contact</SectionHeading>
 
       <p className="-mt-6 text-gray-700 dark:text-white/80">
-        Please contact me directly at{" "}
+        I'm currently open to{" "}
+        <span className="font-medium">remote Frontend Engineer opportunities</span>.
+        Reach me directly at{" "}
         <a className="underline" href="mailto:bennetukoh@gmail.com">
           bennetukoh@gmail.com
         </a>{" "}
-        or through this form.
+        or through the form below.
       </p>
 
       <form

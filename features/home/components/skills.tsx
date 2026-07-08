@@ -1,8 +1,7 @@
 "use client";
 
-import React from "react";
 import SectionHeading from "@/components/ui/section-heading";
-import { skillsData } from "./data/skills";
+import { skillGroups } from "./data/skills";
 import { useSectionInView } from "@/lib/hooks";
 import { motion } from "framer-motion";
 
@@ -27,26 +26,37 @@ export default function Skills() {
     <section
       id="skills"
       ref={ref}
-      className="mb-28 max-w-[53rem] scroll-mt-28 text-center sm:mb-40"
+      className="mb-28 max-w-[53rem] scroll-mt-28 sm:mb-40"
     >
-      <SectionHeading>My skills</SectionHeading>
-      <ul className="flex flex-wrap justify-center gap-2 text-lg text-gray-800">
-        {skillsData.map((skill, index) => (
-          <motion.li
-            className="borderBlack rounded-xl bg-white px-5 py-3 dark:bg-white/10 dark:text-white/80"
-            key={skill}
-            variants={fadeInAnimationVariants}
-            initial="initial"
-            whileInView="animate"
-            viewport={{
-              once: true,
-            }}
-            custom={index}
-          >
-            {skill}
-          </motion.li>
+      <SectionHeading>Skills & Technologies</SectionHeading>
+      <div className="flex flex-col gap-8">
+        {skillGroups.map((group) => (
+          <div key={group.label}>
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.15em] text-gray-400 dark:text-gray-500">
+              {group.label}
+            </p>
+            <ul className="flex flex-wrap gap-2">
+              {group.skills.map((skill, index) => {
+                const Icon = skill.icon;
+                return (
+                  <motion.li
+                    key={skill.name}
+                    className="borderBlack flex items-center gap-1.5 rounded-xl bg-white px-4 py-2 text-[0.9rem] text-gray-800 dark:bg-white/10 dark:text-white/80"
+                    variants={fadeInAnimationVariants}
+                    initial="initial"
+                    whileInView="animate"
+                    viewport={{ once: true }}
+                    custom={index}
+                  >
+                    {Icon && <Icon className="h-4 w-4 shrink-0" />}
+                    {skill.name}
+                  </motion.li>
+                );
+              })}
+            </ul>
+          </div>
         ))}
-      </ul>
+      </div>
     </section>
   );
 }
