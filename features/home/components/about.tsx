@@ -26,7 +26,7 @@ export default function About() {
         <span className="font-medium">Frontend web development</span>.{" "}
         <span className="italic">I find the problem-solving aspect</span> of
         programming most rewarding,<span className="underline">especially</span>{" "}
-        the the satisfaction that comes from resolving complex issues.
+        the satisfaction that comes from resolving complex issues.
       </p>
 
       <p>

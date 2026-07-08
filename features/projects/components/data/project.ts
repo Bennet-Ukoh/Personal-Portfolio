@@ -17,7 +17,7 @@ export const projectsData = [
     title: "Evento",
     description:
       "Evento is a platform that allows users search for events and book a ticket.",
-    tags: ["React", "Nextjs", "Postgress", "TypeScript", "Tailwind", "Zustand"],
+    tags: ["React", "Next.js", "PostgreSQL", "TypeScript", "Tailwind", "Zustand"],
     imageUrl: eventoImg,
     linkName: "eventsapp.vercel.app",
     url: "https://eventsapp-cyan.vercel.app/",
@@ -27,7 +27,7 @@ export const projectsData = [
     title: "CorpComment",
     description:
       "A public feedback platform that allows users to give feedback on companies.",
-    tags: ["React", "Css", "zustand"],
+    tags: ["React", "CSS", "Zustand"],
     imageUrl: corpcommentImg,
     linkName: "corpcomment.app",
     url: "https://corp-comments-six.vercel.app/",
@@ -36,7 +36,7 @@ export const projectsData = [
     title: "TrekBag",
     description:
       "App that helps users remember what to pack for a trip. Users can also create a list of items to pack.",
-    tags: ["React", "Css"],
+    tags: ["React", "CSS"],
     imageUrl: trekbagImg,
     linkName: "trekbag.vercel.app",
     url: "https://trek-bag-ten.vercel.app/",

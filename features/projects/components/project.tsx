@@ -4,7 +4,7 @@ import { useRef } from "react";
 import { projectsData } from "@/lib/data";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { Link2Icon } from "@radix-ui/react-icons";
+import { FiExternalLink } from "react-icons/fi";
 
 type ProjectProps = (typeof projectsData)[number];
 
@@ -21,23 +21,23 @@ export default function Project({
     target: ref,
     offset: ["0 1", "1.33 1"],
   });
-  const scaleProgess = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
-  const opacityProgess = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
+  const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
+  const opacityProgress = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
 
   return (
     <motion.div
       ref={ref}
       style={{
-        scale: scaleProgess,
-        opacity: opacityProgess,
+        scale: scaleProgress,
+        opacity: opacityProgress,
       }}
       className="group mb-3 last:mb-0 sm:mb-8"
     >
       <section className="relative max-w-[45rem] overflow-x-hidden rounded-lg border border-black/5 bg-gray-100 transition hover:bg-gray-200 dark:bg-white/10 dark:text-white dark:hover:bg-white/20 sm:h-[20rem] sm:pr-8 sm:group-even:pl-8">
         <Image
           src={imageUrl}
-          alt="Project I worked on"
-          quality={95}
+          alt={`${title} project screenshot`}
+          quality={85}
           className="-right-40 top-8 w-[28.25rem] rounded-t-lg shadow-2xl transition group-even:-left-40 group-even:right-[initial] group-hover:-translate-x-3 group-hover:translate-y-3 group-hover:-rotate-2 group-hover:scale-[1.04] group-even:group-hover:translate-x-3 group-even:group-hover:translate-y-3 group-even:group-hover:rotate-2 sm:hidden"
         />
 
@@ -47,10 +47,10 @@ export default function Project({
             {description}
           </p>
           <ul className="mb-10 mt-4 flex flex-wrap gap-2 sm:mt-auto">
-            {tags.map((tag, index) => (
+            {tags.map((tag) => (
               <li
                 className="rounded-full bg-black/[0.7] px-3 py-1 text-[0.7rem] uppercase tracking-wider text-white dark:text-white/70"
-                key={index}
+                key={tag}
               >
                 {tag}
               </li>
@@ -60,17 +60,18 @@ export default function Project({
           <a
             href={url}
             target="_blank"
+            rel="noopener noreferrer"
             className="flex items-center gap-x-2 font-semibold text-zinc-400 group-hover:text-orange-700 dark:text-zinc-200 dark:group-hover:text-orange-500"
           >
-            <Link2Icon className="h-4 w-4" />
+            <FiExternalLink className="h-4 w-4" />
             {linkName}
           </a>
         </div>
 
         <Image
           src={imageUrl}
-          alt="Project I worked on"
-          quality={95}
+          alt={`${title} project screenshot`}
+          quality={85}
           className="absolute -right-40 top-8 hidden w-[28.25rem] rounded-t-lg shadow-2xl transition group-even:-left-40 group-even:right-[initial] group-hover:-translate-x-3 group-hover:translate-y-3 group-hover:-rotate-2 group-hover:scale-[1.04] group-even:group-hover:translate-x-3 group-even:group-hover:translate-y-3 group-even:group-hover:rotate-2 sm:block"
         />
       </section>
