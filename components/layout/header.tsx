@@ -1,8 +1,7 @@
 "use client";
 
-import React from "react";
 import { motion } from "framer-motion";
-import { links } from "@/lib/data";
+import { links } from "@/components/layout/data/links";
 import Link from "next/link";
 import clsx from "clsx";
 import { useActiveSectionContext } from "@/context/active-section-context";
@@ -19,7 +18,7 @@ export default function Header() {
         animate={{ y: 0, x: "-50%", opacity: 1 }}
       ></motion.div>
 
-      <nav className="fixed left-1/2 top-[0.15rem] flex h-12 -translate-x-1/2 py-2 sm:h-[initial] sm:py-0">
+      <nav aria-label="Site navigation" className="fixed left-1/2 top-[0.15rem] flex h-12 -translate-x-1/2 py-2 sm:h-[initial] sm:py-0">
         <ul className="sm:text-medium flex w-[22rem] flex-wrap items-center justify-center gap-y-1 text-[0.9rem] font-medium text-gray-500 sm:w-[initial] sm:flex-nowrap sm:gap-5 sm:gap-y-4">
           {links.map((link) => (
             <motion.li

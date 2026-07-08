@@ -1,7 +1,7 @@
-import React from "react";
+import type { ReactNode } from "react";
 
 type SectionHeadingProps = {
-  children: React.ReactNode;
+  children: ReactNode;
 };
 
 export default function SectionHeading({ children }: SectionHeadingProps) {

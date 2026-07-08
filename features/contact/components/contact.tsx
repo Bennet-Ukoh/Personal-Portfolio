@@ -1,11 +1,10 @@
 "use client";
 
-import React from "react";
-import SectionHeading from "./section-heading";
+import SectionHeading from "@/components/ui/section-heading";
 import { motion } from "framer-motion";
 import { useSectionInView } from "@/lib/hooks";
-import { sendEmail } from "@/actions/sendEmail";
-import SubmitBtn from "./submit-btn";
+import { sendEmail } from "@/features/contact/actions";
+import SubmitBtn from "@/components/ui/submit-btn";
 import toast from "react-hot-toast";
 
 export default function Contact() {
@@ -15,7 +14,7 @@ export default function Contact() {
     <motion.section
       id="contact"
       ref={ref}
-      className="mb-20 scroll-mt-28 sm:mb-28 w-[min(100%,38rem)] text-center"
+      className="mb-20 w-[min(100%,38rem)] scroll-mt-28 text-center sm:mb-28"
       initial={{
         opacity: 0,
       }}
@@ -29,20 +28,22 @@ export default function Contact() {
         once: true,
       }}
     >
-      <SectionHeading>Contact me</SectionHeading>
+      <SectionHeading>Contact</SectionHeading>
 
-      <p className="text-gray-700 -mt-6 dark:text-white/80">
-        Please contact me directly at{" "}
+      <p className="-mt-6 text-gray-700 dark:text-white/80">
+        I'm currently open to{" "}
+        <span className="font-medium">remote Frontend Engineer opportunities</span>.
+        Reach me directly at{" "}
         <a className="underline" href="mailto:bennetukoh@gmail.com">
           bennetukoh@gmail.com
         </a>{" "}
-        or through this form.
+        or through the form below.
       </p>
 
       <form
         className="mt-10 flex flex-col dark:text-black"
         action={async (formData) => {
-          const { data, error } = await sendEmail(formData);
+          const { error } = await sendEmail(formData);
 
           if (error) {
             toast.error(error);
@@ -52,16 +53,24 @@ export default function Contact() {
           toast.success("Email sent successfully!");
         }}
       >
+        <label htmlFor="senderEmail" className="sr-only">
+          Your email
+        </label>
         <input
-          className="h-14 px-4 rounded-lg borderBlack dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all dark:outline-none"
+          id="senderEmail"
+          className="borderBlack h-14 rounded-lg px-4 transition-all dark:bg-white dark:bg-opacity-80 dark:outline-none dark:focus:bg-opacity-100"
           name="senderEmail"
           type="email"
           required
           maxLength={500}
           placeholder="Your email"
         />
+        <label htmlFor="message" className="sr-only">
+          Your message
+        </label>
         <textarea
-          className="h-52 my-3 rounded-lg borderBlack p-4 dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all dark:outline-none"
+          id="message"
+          className="borderBlack my-3 h-52 rounded-lg p-4 transition-all dark:bg-white dark:bg-opacity-80 dark:outline-none dark:focus:bg-opacity-100"
           name="message"
           placeholder="Your message"
           required

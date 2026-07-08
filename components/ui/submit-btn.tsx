@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+
 import { FaPaperPlane } from "react-icons/fa";
 import { useFormStatus } from "react-dom";
 
