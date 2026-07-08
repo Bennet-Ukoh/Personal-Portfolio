@@ -25,10 +25,7 @@ export default function Intro() {
           <motion.div
             initial={{ opacity: 0, scale: 0 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{
-              type: "tween",
-              duration: 0.2,
-            }}
+            transition={{ type: "tween", duration: 0.2 }}
           >
             <Image
               src={profileImg}
@@ -45,12 +42,7 @@ export default function Intro() {
             className="absolute bottom-4 right-3 text-4xl"
             initial={{ opacity: 0, scale: 0 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{
-              type: "spring",
-              stiffness: 125,
-              delay: 0.1,
-              duration: 0.7,
-            }}
+            transition={{ type: "spring", stiffness: 125, delay: 0.1, duration: 0.7 }}
           >
             👋
           </motion.span>
@@ -71,26 +63,34 @@ export default function Intro() {
       </motion.div>
 
       <motion.h1
-        className="mb-10 mt-4 px-4 text-2xl font-medium !leading-[1.5] sm:text-4xl"
+        className="mb-2 mt-4 px-4 text-2xl font-medium !leading-[1.5] sm:text-4xl"
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.1 }}
       >
         <span className="font-bold">Hello, I'm Bennet.</span> I'm a{" "}
-        <span className="font-bold">Frontend Engineer</span> who builds{" "}
-        <span className="font-bold">production-ready web applications</span>{" "}
-        with <span className="underline">React & Next.js</span> — currently
-        leading frontend engineering at{" "}
-        <span className="font-bold">CrystalLattice Limited</span>.
+        <span className="font-bold">Frontend Engineer</span> specialising in{" "}
+        <span className="underline">React & Next.js</span>.
       </motion.h1>
+
+      <motion.p
+        className="mb-8 px-4 text-base text-gray-600 dark:text-gray-400 sm:text-lg"
+        initial={{ opacity: 0, y: 100 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.12 }}
+      >
+        Currently leading frontend engineering at{" "}
+        <span className="font-medium text-gray-800 dark:text-gray-200">
+          CrystalLattice Limited
+        </span>
+        .
+      </motion.p>
 
       <motion.div
         className="flex flex-col items-center justify-center gap-2 px-4 text-lg font-medium sm:flex-row"
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{
-          delay: 0.15,
-        }}
+        transition={{ delay: 0.15 }}
       >
         <Link
           href="#contact"
