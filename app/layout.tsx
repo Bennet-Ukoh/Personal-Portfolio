@@ -7,6 +7,8 @@ import Footer from "@/components/layout/footer";
 import ThemeSwitch from "@/components/ui/theme-switch";
 import ThemeContextProvider from "@/context/theme-context";
 import { Toaster } from "react-hot-toast";
+import ChatWidget from "@/features/chat/components/chat-widget";
+import ScrollProgress from "@/components/ui/scroll-progress";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -42,12 +44,14 @@ export default function RootLayout({
       >
         <ThemeContextProvider>
           <ActiveSectionContextProvider>
+            <ScrollProgress />
             <Header />
             {children}
             <Footer />
 
             <Toaster position="top-right" />
             <ThemeSwitch />
+            <ChatWidget />
           </ActiveSectionContextProvider>
         </ThemeContextProvider>
       </body>
