@@ -19,28 +19,29 @@ export default function About() {
       <SectionHeading>About me</SectionHeading>
       <p className="mb-3">
         After earning a degree in{" "}
-        <span className="font-medium">Electronics And Computer Technology</span>
-        , I transitioned to pursue my passion for programming. I completed a
-        Software Engineering program at ALX - Africa, specializing in{" "}
-        <span className="font-medium">Frontend web development</span>.{" "}
-        <span className="italic">I find the problem-solving aspect</span> of
-        programming most rewarding,<span className="underline">especially</span>{" "}
-        the satisfaction that comes from resolving complex issues.
+        <span className="font-medium">Electronics and Computer Technology</span>
+        , I transitioned into software engineering and completed an intensive
+        fellowship at <span className="font-medium">ALX Africa</span>,
+        specialising in{" "}
+        <span className="font-medium">frontend web development</span>. I find
+        the problem-solving side of engineering most rewarding — especially
+        turning complex UI challenges into clean, maintainable solutions.
+      </p>
+
+      <p className="mb-3">
+        My core stack is{" "}
+        <span className="font-medium">React and Next.js</span>, with hands-on
+        experience in TypeScript, PostgreSQL, and Prisma. I currently lead
+        frontend engineering and developer training at{" "}
+        <span className="font-medium">CrystalLattice Limited</span>, and I'm
+        always looking to deepen my skills and explore emerging technologies.
       </p>
 
       <p>
-        My core stack is <span className="font-medium">React and Next.js</span>,
-        with additional experience in TypeScript and Prisma. I am always eager
-        to expand my skill set and explore new technologies. Currently, I'm
-        seeking a <span className="font-medium">full-time role</span> as a
-        Frontend Developer.
-      </p>
-
-      <p>
-        <span className="italic">Outside of coding</span>, I enjoy playing
-        football, watching movies, and{" "}
-        <span className="font-medium">continually learning.</span> I am
-        currently diving into AI.
+        <span className="italic">Outside of work</span>, I enjoy football,
+        watching films, and continually expanding my knowledge —{" "}
+        <span className="font-medium">currently focused on AI integration</span>{" "}
+        in modern web applications.
       </p>
     </motion.section>
   );

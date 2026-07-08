@@ -5,6 +5,7 @@ import { projectsData } from "./data/project";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { FiExternalLink } from "react-icons/fi";
+import { FaGithub } from "react-icons/fa";
 
 type ProjectProps = (typeof projectsData)[number];
 
@@ -15,6 +16,7 @@ export default function Project({
   imageUrl,
   linkName,
   url,
+  githubUrl,
 }: ProjectProps) {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
@@ -57,15 +59,28 @@ export default function Project({
             ))}
           </ul>
 
-          <a
-            href={url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-x-2 font-semibold text-zinc-400 group-hover:text-orange-700 dark:text-zinc-200 dark:group-hover:text-orange-500"
-          >
-            <FiExternalLink className="h-4 w-4" />
-            {linkName}
-          </a>
+          <div className="flex items-center gap-4">
+            {githubUrl && (
+              <a
+                href={githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-x-2 font-semibold text-zinc-400 group-hover:text-orange-700 dark:text-zinc-200 dark:group-hover:text-orange-500"
+              >
+                <FaGithub className="h-4 w-4" />
+                Code
+              </a>
+            )}
+            <a
+              href={url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-x-2 font-semibold text-zinc-400 group-hover:text-orange-700 dark:text-zinc-200 dark:group-hover:text-orange-500"
+            >
+              <FiExternalLink className="h-4 w-4" />
+              {linkName}
+            </a>
+          </div>
         </div>
 
         <Image
