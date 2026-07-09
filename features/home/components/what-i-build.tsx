@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { SiReact } from "react-icons/si";
 import { HiOutlineCode } from "react-icons/hi";
 import { HiSparkles } from "react-icons/hi2";
+import SectionHeading from "@/components/ui/section-heading";
 
 const specialties = [
   {
@@ -29,6 +30,7 @@ const specialties = [
 export default function WhatIBuild() {
   return (
     <section className="mb-12 w-full max-w-[53rem]">
+      <SectionHeading>What I Build</SectionHeading>
       <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
         {specialties.map((item, index) => {
           const Icon = item.icon;
