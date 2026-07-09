@@ -32,39 +32,42 @@ PROJECTS:
 Only answer questions related to Bennet's professional background. If asked something unrelated, politely redirect to his work and skills.`;
 
 export async function sendChatMessage(messages: ChatMessage[]): Promise<ChatResult> {
-  const apiKey = process.env.OPENAI_API_KEY;
+  const apiKey = process.env.GEMINI_API_KEY;
 
   if (!apiKey) {
     return { error: "Chat is not configured yet." };
   }
 
+  // Gemini uses "model" instead of "assistant"
+  const contents = messages.map(({ role, content }) => ({
+    role: role === "assistant" ? "model" : "user",
+    parts: [{ text: content }],
+  }));
+
   try {
-    const response = await fetch("https://api.openai.com/v1/chat/completions", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-        authorization: `Bearer ${apiKey}`,
-      },
-      body: JSON.stringify({
-        model: "gpt-4o-mini",
-        max_tokens: 300,
-        messages: [
-          { role: "system", content: SYSTEM_PROMPT },
-          ...messages,
-        ],
-      }),
-    });
+    const response = await fetch(
+      `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`,
+      {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({
+          system_instruction: { parts: [{ text: SYSTEM_PROMPT }] },
+          contents,
+          generationConfig: { maxOutputTokens: 300 },
+        }),
+      }
+    );
 
     if (!response.ok) {
       const body = await response.json().catch(() => ({}));
-      console.error("[chat] OpenAI error:", response.status, body);
+      console.error("[chat] Gemini error:", response.status, body);
       return { error: "I'm unavailable right now. Try emailing Bennet directly at bennetukoh@gmail.com" };
     }
 
     const data = await response.json();
-    const text = data?.choices?.[0]?.message?.content;
+    const text = data?.candidates?.[0]?.content?.parts?.[0]?.text;
     if (!text) {
-      console.error("[chat] Unexpected OpenAI response:", data);
+      console.error("[chat] Unexpected Gemini response:", data);
       return { error: "Unexpected response from AI. Please try again." };
     }
     return { text: text as string };
