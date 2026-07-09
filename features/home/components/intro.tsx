@@ -74,7 +74,7 @@ export default function Intro() {
       </motion.h1>
 
       <motion.p
-        className="mb-8 px-4 text-base text-gray-600 dark:text-gray-400 sm:text-lg"
+        className="mb-6 px-4 text-sm text-gray-600 dark:text-gray-400 sm:text-base"
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.12 }}
@@ -87,14 +87,14 @@ export default function Intro() {
       </motion.p>
 
       <motion.div
-        className="flex flex-col items-center justify-center gap-2 px-4 text-lg font-medium sm:flex-row"
+        className="flex flex-wrap items-center justify-center gap-2 px-4 text-sm font-medium sm:flex-row sm:text-base"
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.15 }}
       >
         <Link
           href="#contact"
-          className="group flex items-center gap-2 rounded-full bg-gray-900 px-7 py-3 text-white outline-none transition hover:scale-110 hover:bg-gray-950 focus:scale-110 active:scale-105 dark:bg-black"
+          className="group flex items-center gap-2 rounded-full bg-gray-900 px-5 py-2.5 text-white outline-none transition hover:scale-110 hover:bg-gray-950 focus:scale-110 active:scale-105 dark:bg-black"
           onClick={() => {
             setActiveSection("Contact");
             setTimeOfLastClick(Date.now());
@@ -105,7 +105,7 @@ export default function Intro() {
         </Link>
 
         <a
-          className="borderBlack group flex cursor-pointer items-center gap-2 rounded-full bg-white px-7 py-3 outline-none transition hover:scale-110 focus:scale-110 active:scale-105 dark:bg-white/10"
+          className="borderBlack group flex cursor-pointer items-center gap-2 rounded-full bg-white px-5 py-2.5 outline-none transition hover:scale-110 focus:scale-110 active:scale-105 dark:bg-white/10"
           href="/BENNET.docx"
           download
         >
@@ -114,7 +114,7 @@ export default function Intro() {
         </a>
 
         <a
-          className="borderBlack flex cursor-pointer items-center gap-2 rounded-full bg-white p-4 text-gray-700 transition hover:scale-[1.15] hover:text-gray-950 focus:scale-[1.15] active:scale-105 dark:bg-white/10 dark:text-white/60"
+          className="borderBlack hidden cursor-pointer items-center gap-2 rounded-full bg-white p-3 text-gray-700 transition hover:scale-[1.15] hover:text-gray-950 focus:scale-[1.15] active:scale-105 sm:flex dark:bg-white/10 dark:text-white/60"
           href="https://linkedin.com/in/ukohbennet"
           target="_blank"
           rel="noopener noreferrer"
@@ -124,7 +124,7 @@ export default function Intro() {
         </a>
 
         <a
-          className="borderBlack flex cursor-pointer items-center gap-2 rounded-full bg-white p-4 text-[1.35rem] text-gray-700 transition hover:scale-[1.15] hover:text-gray-950 focus:scale-[1.15] active:scale-105 dark:bg-white/10 dark:text-white/60"
+          className="borderBlack hidden cursor-pointer items-center gap-2 rounded-full bg-white p-3 text-lg text-gray-700 transition hover:scale-[1.15] hover:text-gray-950 focus:scale-[1.15] active:scale-105 sm:flex dark:bg-white/10 dark:text-white/60"
           href="https://github.com/Bennet-Ukoh"
           target="_blank"
           rel="noopener noreferrer"
