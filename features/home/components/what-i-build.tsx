@@ -29,7 +29,7 @@ const specialties = [
 
 export default function WhatIBuild() {
   return (
-    <section className="mb-12 w-full max-w-[53rem]">
+    <section className="mb-12 w-full max-w-[53rem] sm:mb-24">
       <SectionHeading>What I Build</SectionHeading>
       <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
         {specialties.map((item, index) => {
