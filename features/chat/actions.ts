@@ -55,12 +55,21 @@ export async function sendChatMessage(messages: ChatMessage[]): Promise<ChatResu
     });
 
     if (!response.ok) {
-      return { error: "Failed to get a response. Please try again." };
+      const body = await response.json().catch(() => ({}));
+      const message = body?.error?.message ?? `HTTP ${response.status}`;
+      console.error("[chat] Anthropic error:", response.status, body);
+      return { error: `API error: ${message}` };
     }
 
     const data = await response.json();
-    return { text: data.content[0].text as string };
-  } catch {
-    return { error: "Something went wrong. Please try again." };
+    const text = data?.content?.[0]?.text;
+    if (!text) {
+      console.error("[chat] Unexpected response shape:", data);
+      return { error: "Unexpected response from AI. Please try again." };
+    }
+    return { text: text as string };
+  } catch (err) {
+    console.error("[chat] Fetch failed:", err);
+    return { error: "Network error. Please check your connection." };
   }
 }
