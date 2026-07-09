@@ -32,38 +32,42 @@ PROJECTS:
 Only answer questions related to Bennet's professional background. If asked something unrelated, politely redirect to his work and skills.`;
 
 export async function sendChatMessage(messages: ChatMessage[]): Promise<ChatResult> {
-  const apiKey = process.env.ANTHROPIC_API_KEY;
+  const apiKey = process.env.GEMINI_API_KEY;
 
   if (!apiKey) {
-    return { error: "Chat is not configured yet — API key missing." };
+    return { error: "Chat is not configured yet." };
   }
 
+  // Gemini uses "model" instead of "assistant"
+  const contents = messages.map(({ role, content }) => ({
+    role: role === "assistant" ? "model" : "user",
+    parts: [{ text: content }],
+  }));
+
   try {
-    const response = await fetch("https://api.anthropic.com/v1/messages", {
-      method: "POST",
-      headers: {
-        "x-api-key": apiKey,
-        "anthropic-version": "2023-06-01",
-        "content-type": "application/json",
-      },
-      body: JSON.stringify({
-        model: "claude-haiku-4-5-20251001",
-        max_tokens: 300,
-        system: SYSTEM_PROMPT,
-        messages,
-      }),
-    });
+    const response = await fetch(
+      `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`,
+      {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({
+          system_instruction: { parts: [{ text: SYSTEM_PROMPT }] },
+          contents,
+          generationConfig: { maxOutputTokens: 300 },
+        }),
+      }
+    );
 
     if (!response.ok) {
       const body = await response.json().catch(() => ({}));
-      console.error("[chat] Anthropic error:", response.status, body);
+      console.error("[chat] Gemini error:", response.status, body);
       return { error: "I'm unavailable right now. Try emailing Bennet directly at bennetukoh@gmail.com" };
     }
 
     const data = await response.json();
-    const text = data?.content?.[0]?.text;
+    const text = data?.candidates?.[0]?.content?.parts?.[0]?.text;
     if (!text) {
-      console.error("[chat] Unexpected response shape:", data);
+      console.error("[chat] Unexpected Gemini response:", data);
       return { error: "Unexpected response from AI. Please try again." };
     }
     return { text: text as string };
