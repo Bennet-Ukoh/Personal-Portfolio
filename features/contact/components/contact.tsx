@@ -14,7 +14,7 @@ export default function Contact() {
     <motion.section
       id="contact"
       ref={ref}
-      className="mb-20 w-[min(100%,38rem)] scroll-mt-28 text-center sm:mb-28"
+      className="mb-12 w-[min(100%,38rem)] scroll-mt-28 text-center sm:mb-28"
       initial={{
         opacity: 0,
       }}
@@ -58,7 +58,7 @@ export default function Contact() {
         </label>
         <input
           id="senderEmail"
-          className="borderBlack h-14 rounded-lg px-4 transition-all dark:bg-white dark:bg-opacity-80 dark:outline-none dark:focus:bg-opacity-100"
+          className="borderBlack h-12 rounded-lg px-4 transition-all dark:bg-white dark:bg-opacity-80 dark:outline-none dark:focus:bg-opacity-100"
           name="senderEmail"
           type="email"
           required
@@ -70,7 +70,7 @@ export default function Contact() {
         </label>
         <textarea
           id="message"
-          className="borderBlack my-3 h-52 rounded-lg p-4 transition-all dark:bg-white dark:bg-opacity-80 dark:outline-none dark:focus:bg-opacity-100"
+          className="borderBlack my-3 h-40 rounded-lg p-4 transition-all dark:bg-white dark:bg-opacity-80 dark:outline-none dark:focus:bg-opacity-100"
           name="message"
           placeholder="Your message"
           required
