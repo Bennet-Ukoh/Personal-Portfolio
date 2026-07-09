@@ -37,7 +37,7 @@ export default function WhatIBuild() {
           return (
             <motion.div
               key={item.title}
-              className="rounded-2xl border border-black/[0.07] bg-white px-6 py-5 dark:border-white/[0.07] dark:bg-white/5"
+              className="rounded-2xl border border-slate-200 bg-white px-6 py-5 shadow-sm transition-all duration-200 hover:border-indigo-200 hover:shadow-md dark:border-white/[0.07] dark:bg-white/5 dark:hover:border-white/20"
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1, duration: 0.4 }}

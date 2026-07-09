@@ -32,7 +32,7 @@ export default function Skills() {
       <div className="flex flex-col gap-8">
         {skillGroups.map((group) => (
           <div key={group.label}>
-            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.15em] text-gray-400 dark:text-gray-500">
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.15em] text-indigo-400 dark:text-gray-500">
               {group.label}
             </p>
             <ul className="flex flex-wrap gap-2">
@@ -41,7 +41,7 @@ export default function Skills() {
                 return (
                   <motion.li
                     key={skill.name}
-                    className="borderBlack flex items-center gap-1.5 rounded-xl bg-white px-4 py-2 text-[0.9rem] text-gray-800 dark:bg-white/10 dark:text-white/80"
+                    className="flex items-center gap-1.5 rounded-xl border border-slate-200 bg-white px-4 py-2 text-[0.9rem] text-slate-700 shadow-sm dark:border-white/10 dark:bg-white/10 dark:text-white/80"
                     variants={fadeInAnimationVariants}
                     initial="initial"
                     whileInView="animate"
