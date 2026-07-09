@@ -8,16 +8,6 @@ html {
 html.dark {
   --line-color: rgba(255, 255, 255, 0.2);
 }
-
-/* Subtle indigo glow at the top — light mode only */
-html:not(.dark) body {
-  background-image: radial-gradient(
-    ellipse 80% 40% at 50% -5%,
-    rgba(99, 102, 241, 0.07) 0%,
-    transparent 65%
-  );
-}
-
 .borderBlack {
-  @apply border border-slate-200 dark:border-white/10;
+  @apply border border-black/10;
 }

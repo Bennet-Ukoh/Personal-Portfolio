@@ -34,7 +34,7 @@ export default function Project({
       }}
       className="group mb-3 last:mb-0 sm:mb-8"
     >
-      <section className="relative max-w-[45rem] overflow-x-hidden rounded-lg border border-slate-200 bg-white transition hover:bg-slate-50 dark:border-white/5 dark:bg-white/10 dark:text-white dark:hover:bg-white/20 sm:h-[22rem] sm:pr-8 sm:group-even:pl-8">
+      <section className="relative max-w-[45rem] overflow-x-hidden rounded-lg border border-black/5 bg-gray-100 transition hover:bg-gray-200 dark:bg-white/10 dark:text-white dark:hover:bg-white/20 sm:h-[22rem] sm:pr-8 sm:group-even:pl-8">
         <Image
           src={imageUrl}
           alt={`${title} project screenshot`}
