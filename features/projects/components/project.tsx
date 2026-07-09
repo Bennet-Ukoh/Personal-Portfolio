@@ -34,7 +34,7 @@ export default function Project({
       }}
       className="group mb-3 last:mb-0 sm:mb-8"
     >
-      <section className="relative max-w-[45rem] overflow-hidden rounded-lg border border-black/5 bg-gray-100 transition hover:bg-gray-200 dark:bg-white/10 dark:text-white dark:hover:bg-white/20 sm:min-h-[22rem] sm:pr-8 sm:group-even:pl-8">
+      <section className="relative max-w-[45rem] overflow-hidden rounded-lg border border-violet-100 bg-violet-50/60 transition hover:bg-violet-50 dark:border-white/5 dark:bg-white/10 dark:text-white dark:hover:bg-white/20 sm:min-h-[22rem] sm:pr-8 sm:group-even:pl-8">
         <Image
           src={imageUrl}
           alt={`${title} project screenshot`}
@@ -50,7 +50,7 @@ export default function Project({
           <ul className="mb-4 mt-4 flex flex-wrap gap-2 sm:mt-auto">
             {tags.map((tag) => (
               <li
-                className="rounded-full bg-black/[0.7] px-3 py-1 text-[0.7rem] uppercase tracking-wider text-white dark:text-white/70"
+                className="rounded-full bg-violet-700 px-3 py-1 text-[0.7rem] uppercase tracking-wider text-white/90 dark:bg-black/[0.7] dark:text-white/70"
                 key={tag}
               >
                 {tag}
