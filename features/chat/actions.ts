@@ -56,9 +56,8 @@ export async function sendChatMessage(messages: ChatMessage[]): Promise<ChatResu
 
     if (!response.ok) {
       const body = await response.json().catch(() => ({}));
-      const message = body?.error?.message ?? `HTTP ${response.status}`;
       console.error("[chat] Anthropic error:", response.status, body);
-      return { error: `API error: ${message}` };
+      return { error: "I'm unavailable right now. Try emailing Bennet directly at bennetukoh@gmail.com" };
     }
 
     const data = await response.json();
