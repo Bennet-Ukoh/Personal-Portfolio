@@ -4,7 +4,7 @@ import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { BsChatDotsFill, BsX, BsSend } from "react-icons/bs";
 import { HiSparkles } from "react-icons/hi2";
-import { sendChatMessage, type ChatMessage } from "../actions";
+import { sendChatMessage, type ChatMessage, type ChatResult } from "../actions";
 
 const SUGGESTED_QUESTIONS = [
   "What's Bennet's main tech stack?",
@@ -51,16 +51,23 @@ export default function ChatWidget() {
       .slice(1)
       .map(({ role, content }) => ({ role, content }));
 
-    const result = await sendChatMessage(apiMessages);
-
-    setMessages((prev) => [
-      ...prev,
-      {
-        role: "assistant",
-        content: result.text ?? result.error ?? "Something went wrong.",
-      },
-    ]);
-    setIsLoading(false);
+    try {
+      const result: ChatResult = await sendChatMessage(apiMessages);
+      setMessages((prev) => [
+        ...prev,
+        {
+          role: "assistant",
+          content: result.text ?? result.error ?? "Something went wrong.",
+        },
+      ]);
+    } catch {
+      setMessages((prev) => [
+        ...prev,
+        { role: "assistant", content: "Something went wrong. Please try again." },
+      ]);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (

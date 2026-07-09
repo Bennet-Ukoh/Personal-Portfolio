@@ -1,6 +1,7 @@
 "use server";
 
 export type ChatMessage = { role: "user" | "assistant"; content: string };
+export type ChatResult = { text?: string; error?: string };
 
 const SYSTEM_PROMPT = `You are an AI assistant on Bennet Ukoh's portfolio website. Help recruiters and visitors learn about Bennet. Be professional, concise, and friendly. Answer in 2–4 sentences maximum.
 
@@ -30,7 +31,7 @@ PROJECTS:
 
 Only answer questions related to Bennet's professional background. If asked something unrelated, politely redirect to his work and skills.`;
 
-export async function sendChatMessage(messages: ChatMessage[]) {
+export async function sendChatMessage(messages: ChatMessage[]): Promise<ChatResult> {
   const apiKey = process.env.ANTHROPIC_API_KEY;
 
   if (!apiKey) {
