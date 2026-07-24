@@ -30,7 +30,7 @@ export default function Contact() {
     >
       <SectionHeading>Contact</SectionHeading>
 
-      <p className="-mt-6 text-gray-700 dark:text-white/80">
+      <p className="-mt-6 text-[#3C4B63] dark:text-white/80">
         I'm currently open to{" "}
         <span className="font-medium">remote Frontend Engineer opportunities</span>.
         Reach me directly at{" "}
@@ -58,7 +58,7 @@ export default function Contact() {
         </label>
         <input
           id="senderEmail"
-          className="borderBlack h-12 rounded-lg px-4 transition-all dark:bg-white dark:bg-opacity-80 dark:outline-none dark:focus:bg-opacity-100"
+          className="borderBlack h-12 rounded-lg bg-white px-4 transition-all focus:border-[#0f2545]/30 dark:bg-white dark:bg-opacity-80 dark:outline-none dark:focus:bg-opacity-100"
           name="senderEmail"
           type="email"
           required
@@ -70,7 +70,7 @@ export default function Contact() {
         </label>
         <textarea
           id="message"
-          className="borderBlack my-3 h-40 rounded-lg p-4 transition-all dark:bg-white dark:bg-opacity-80 dark:outline-none dark:focus:bg-opacity-100"
+          className="borderBlack my-3 h-40 rounded-lg bg-white p-4 transition-all focus:border-[#0f2545]/30 dark:bg-white dark:bg-opacity-80 dark:outline-none dark:focus:bg-opacity-100"
           name="message"
           placeholder="Your message"
           required

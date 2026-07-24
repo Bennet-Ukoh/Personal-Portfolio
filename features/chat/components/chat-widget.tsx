@@ -80,10 +80,10 @@ export default function ChatWidget() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 16, scale: 0.95 }}
             transition={{ type: "spring", stiffness: 300, damping: 28 }}
-            className="flex h-[480px] max-h-[calc(100svh-6rem)] w-[340px] flex-col overflow-hidden rounded-2xl border border-black/10 bg-white shadow-2xl dark:border-white/10 dark:bg-gray-900"
+            className="flex h-[480px] max-h-[calc(100svh-6rem)] w-[340px] flex-col overflow-hidden rounded-2xl border border-[#0f2545]/10 bg-white shadow-2xl dark:border-white/10 dark:bg-gray-900"
           >
             {/* Header */}
-            <div className="flex items-center justify-between bg-gray-900 px-4 py-3 dark:bg-gray-800">
+            <div className="flex items-center justify-between bg-[#132C4F] px-4 py-3 dark:bg-gray-800">
               <div className="flex items-center gap-2">
                 <HiSparkles className="h-4 w-4 text-orange-400" />
                 <span className="text-sm font-medium text-white">
@@ -109,8 +109,8 @@ export default function ChatWidget() {
                   <div
                     className={`max-w-[82%] rounded-2xl px-4 py-2.5 text-sm leading-relaxed ${
                       msg.role === "user"
-                        ? "bg-gray-900 text-white dark:bg-gray-700"
-                        : "bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-200"
+                        ? "bg-[#132C4F] text-white dark:bg-gray-700"
+                        : "bg-[#EDF2FA] text-[#0F2545] dark:bg-gray-800 dark:text-gray-200"
                     }`}
                   >
                     {msg.content}
@@ -120,11 +120,11 @@ export default function ChatWidget() {
 
               {isLoading && (
                 <div className="flex justify-start">
-                  <div className="flex items-center gap-1.5 rounded-2xl bg-gray-100 px-4 py-3 dark:bg-gray-800">
+                  <div className="flex items-center gap-1.5 rounded-2xl bg-[#EDF2FA] px-4 py-3 dark:bg-gray-800">
                     {[0, 1, 2].map((i) => (
                       <span
                         key={i}
-                        className="h-1.5 w-1.5 animate-bounce rounded-full bg-gray-400"
+                        className="h-1.5 w-1.5 animate-bounce rounded-full bg-[#8493AC] dark:bg-gray-400"
                         style={{ animationDelay: `${i * 0.15}s` }}
                       />
                     ))}
@@ -145,7 +145,7 @@ export default function ChatWidget() {
                       setInput(q);
                       inputRef.current?.focus();
                     }}
-                    className="rounded-full border border-gray-200 bg-gray-50 px-3 py-1 text-xs text-gray-600 transition hover:border-gray-400 hover:text-gray-900 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:border-gray-500 dark:hover:text-gray-200"
+                    className="rounded-full border border-[#0f2545]/10 bg-[#F5F8FC] px-3 py-1 text-xs text-[#5C6B84] transition hover:border-[#0f2545]/30 hover:text-[#0F2545] dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:border-gray-500 dark:hover:text-gray-200"
                   >
                     {q}
                   </button>
@@ -154,7 +154,7 @@ export default function ChatWidget() {
             )}
 
             {/* Input */}
-            <div className="border-t border-black/10 p-3 dark:border-white/10">
+            <div className="border-t border-[#0f2545]/10 p-3 dark:border-white/10">
               <form
                 className="flex items-center gap-2"
                 onSubmit={(e) => {
@@ -169,13 +169,13 @@ export default function ChatWidget() {
                   onChange={(e) => setInput(e.target.value)}
                   placeholder="Ask a question..."
                   disabled={isLoading}
-                  className="flex-1 rounded-full border border-black/10 bg-gray-50 px-4 py-2 text-sm outline-none transition focus:border-gray-400 disabled:opacity-50 dark:border-white/10 dark:bg-gray-800 dark:text-white dark:focus:border-white/30"
+                  className="flex-1 rounded-full border border-[#0f2545]/10 bg-[#F5F8FC] px-4 py-2 text-sm text-[#0F2545] outline-none transition focus:border-[#0f2545]/40 disabled:opacity-50 dark:border-white/10 dark:bg-gray-800 dark:text-white dark:focus:border-white/30"
                 />
                 <button
                   type="submit"
                   disabled={!input.trim() || isLoading}
                   aria-label="Send message"
-                  className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-gray-900 text-white transition hover:bg-gray-700 disabled:opacity-40 dark:bg-gray-700 dark:hover:bg-gray-600"
+                  className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#132C4F] text-white transition hover:bg-[#0B1E3A] disabled:opacity-40 dark:bg-gray-700 dark:hover:bg-gray-600"
                 >
                   <BsSend className="h-3.5 w-3.5" />
                 </button>
@@ -190,7 +190,7 @@ export default function ChatWidget() {
         onClick={() => setIsOpen((prev) => !prev)}
         whileTap={{ scale: 0.92 }}
         aria-label={isOpen ? "Close AI chat" : "Ask Bennet's AI assistant"}
-        className="flex h-14 w-14 items-center justify-center rounded-full bg-gray-900 text-white shadow-lg transition hover:bg-gray-700 dark:bg-gray-700 dark:hover:bg-gray-600"
+        className="flex h-14 w-14 items-center justify-center rounded-full bg-[#132C4F] text-white shadow-lg transition hover:bg-[#0B1E3A] dark:bg-gray-700 dark:hover:bg-gray-600"
       >
         <AnimatePresence mode="wait" initial={false}>
           {isOpen ? (

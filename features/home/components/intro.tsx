@@ -55,7 +55,7 @@ export default function Intro() {
       </div>
 
       <motion.div
-        className="mt-4 flex items-center justify-center gap-2 text-sm text-gray-600 dark:text-gray-400"
+        className="mt-4 flex items-center justify-center gap-2 text-sm text-[#3C4B63] dark:text-gray-400"
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.05 }}
@@ -79,13 +79,13 @@ export default function Intro() {
       </motion.h1>
 
       <motion.p
-        className="mb-6 px-4 text-sm text-gray-600 dark:text-gray-400 sm:text-base"
+        className="mb-6 px-4 text-sm text-[#3C4B63] dark:text-gray-400 sm:text-base"
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.12 }}
       >
         Currently leading frontend engineering at{" "}
-        <span className="font-medium text-gray-800 dark:text-gray-200">
+        <span className="font-medium text-[#0F2545] dark:text-gray-200">
           CrystalLattice Limited
         </span>
         .
@@ -99,7 +99,7 @@ export default function Intro() {
       >
         <Link
           href="#contact"
-          className="group flex items-center gap-2 rounded-full bg-gray-900 px-5 py-2.5 text-white outline-none transition hover:scale-110 hover:bg-gray-950 focus:scale-110 active:scale-105 dark:bg-black"
+          className="group flex items-center gap-2 rounded-full bg-[#132C4F] px-5 py-2.5 text-white outline-none transition hover:scale-110 hover:bg-[#0B1E3A] focus:scale-110 active:scale-105 dark:bg-black"
           onClick={() => {
             setActiveSection("Contact");
             setTimeOfLastClick(Date.now());
@@ -119,7 +119,7 @@ export default function Intro() {
         </a>
 
         <a
-          className="borderBlack hidden cursor-pointer items-center gap-2 rounded-full bg-white p-3 text-gray-700 transition hover:scale-[1.15] hover:text-gray-950 focus:scale-[1.15] active:scale-105 dark:bg-white/10 dark:text-white/60 sm:flex"
+          className="borderBlack hidden cursor-pointer items-center gap-2 rounded-full bg-white p-3 text-[#3C4B63] transition hover:scale-[1.15] hover:text-[#0F2545] focus:scale-[1.15] active:scale-105 dark:bg-white/10 dark:text-white/60 sm:flex"
           href="https://linkedin.com/in/ukohbennet"
           target="_blank"
           rel="noopener noreferrer"
@@ -129,7 +129,7 @@ export default function Intro() {
         </a>
 
         <a
-          className="borderBlack hidden cursor-pointer items-center gap-2 rounded-full bg-white p-3 text-lg text-gray-700 transition hover:scale-[1.15] hover:text-gray-950 focus:scale-[1.15] active:scale-105 dark:bg-white/10 dark:text-white/60 sm:flex"
+          className="borderBlack hidden cursor-pointer items-center gap-2 rounded-full bg-white p-3 text-lg text-[#3C4B63] transition hover:scale-[1.15] hover:text-[#0F2545] focus:scale-[1.15] active:scale-105 dark:bg-white/10 dark:text-white/60 sm:flex"
           href="https://github.com/Bennet-Ukoh"
           target="_blank"
           rel="noopener noreferrer"

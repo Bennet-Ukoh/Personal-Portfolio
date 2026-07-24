@@ -37,17 +37,17 @@ export default function WhatIBuild() {
           return (
             <motion.div
               key={item.title}
-              className="rounded-2xl border border-black/[0.07] bg-white px-6 py-5 dark:border-white/[0.07] dark:bg-white/5"
+              className="rounded-2xl border border-[#0f2545]/[0.08] bg-white px-6 py-5 shadow-sm shadow-[#0f2545]/[0.03] dark:border-white/[0.07] dark:bg-white/5 dark:shadow-none"
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1, duration: 0.4 }}
               viewport={{ once: true }}
             >
-              <Icon className="mb-3 h-5 w-5 text-gray-500 dark:text-gray-400" />
-              <h3 className="mb-1.5 text-sm font-semibold text-gray-900 dark:text-white">
+              <Icon className="mb-3 h-5 w-5 text-[#6B7A93] dark:text-gray-400" />
+              <h3 className="mb-1.5 text-sm font-semibold text-[#0F2545] dark:text-white">
                 {item.title}
               </h3>
-              <p className="text-xs leading-relaxed text-gray-500 dark:text-gray-400">
+              <p className="text-xs leading-relaxed text-[#6B7A93] dark:text-gray-400">
                 {item.description}
               </p>
             </motion.div>

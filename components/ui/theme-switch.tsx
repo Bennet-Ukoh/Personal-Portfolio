@@ -8,7 +8,7 @@ export default function ThemeSwitch() {
 
   return (
     <button
-      className="fixed bottom-5 left-5 flex h-[3rem] w-[3rem] items-center justify-center rounded-full border border-white border-opacity-40 bg-white bg-opacity-80 shadow-2xl backdrop-blur-[0.5rem] transition-all hover:scale-[1.15] active:scale-105 dark:bg-gray-950"
+      className="fixed bottom-5 left-5 flex h-[3rem] w-[3rem] items-center justify-center rounded-full border border-[#0f2545]/10 bg-white/80 text-[#0F2545] shadow-2xl backdrop-blur-[0.5rem] transition-all hover:scale-[1.15] active:scale-105 dark:bg-gray-950 dark:text-inherit"
       onClick={toggleTheme}
       aria-label={`Switch to ${theme === "light" ? "dark" : "light"} mode`}
     >
