@@ -42,7 +42,12 @@ export default function Intro() {
             className="absolute bottom-4 right-3 text-4xl"
             initial={{ opacity: 0, scale: 0 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ type: "spring", stiffness: 125, delay: 0.1, duration: 0.7 }}
+            transition={{
+              type: "spring",
+              stiffness: 125,
+              delay: 0.1,
+              duration: 0.7,
+            }}
           >
             👋
           </motion.span>
@@ -106,7 +111,7 @@ export default function Intro() {
 
         <a
           className="borderBlack group flex cursor-pointer items-center gap-2 rounded-full bg-white px-5 py-2.5 outline-none transition hover:scale-110 focus:scale-110 active:scale-105 dark:bg-white/10"
-          href="/BENNET.docx"
+          href="/Bennet_Ukoh_CV.pdf"
           download
         >
           Download CV{" "}
@@ -114,7 +119,7 @@ export default function Intro() {
         </a>
 
         <a
-          className="borderBlack hidden cursor-pointer items-center gap-2 rounded-full bg-white p-3 text-gray-700 transition hover:scale-[1.15] hover:text-gray-950 focus:scale-[1.15] active:scale-105 sm:flex dark:bg-white/10 dark:text-white/60"
+          className="borderBlack hidden cursor-pointer items-center gap-2 rounded-full bg-white p-3 text-gray-700 transition hover:scale-[1.15] hover:text-gray-950 focus:scale-[1.15] active:scale-105 dark:bg-white/10 dark:text-white/60 sm:flex"
           href="https://linkedin.com/in/ukohbennet"
           target="_blank"
           rel="noopener noreferrer"
@@ -124,7 +129,7 @@ export default function Intro() {
         </a>
 
         <a
-          className="borderBlack hidden cursor-pointer items-center gap-2 rounded-full bg-white p-3 text-lg text-gray-700 transition hover:scale-[1.15] hover:text-gray-950 focus:scale-[1.15] active:scale-105 sm:flex dark:bg-white/10 dark:text-white/60"
+          className="borderBlack hidden cursor-pointer items-center gap-2 rounded-full bg-white p-3 text-lg text-gray-700 transition hover:scale-[1.15] hover:text-gray-950 focus:scale-[1.15] active:scale-105 dark:bg-white/10 dark:text-white/60 sm:flex"
           href="https://github.com/Bennet-Ukoh"
           target="_blank"
           rel="noopener noreferrer"
